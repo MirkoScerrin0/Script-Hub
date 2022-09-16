@@ -1,0 +1,425 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Made by Mirk0#2510", "BloodTheme")
+
+-- MAIN
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main")
+
+
+MainSection:NewButton("Back/Front Flip", "Press Z and X", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/7wDcPtLk'))()
+end)
+
+MainSection:NewButton("Infinite Yield", "FE Admin Commands", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+MainSection:NewButton("Prison Life", "Prison Life GUI (Not Mine)", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/LnAUPBXj",true))()
+end)
+
+MainSection:NewButton("Chat Art", "Nothing to say (Script not mine)", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/omegachadgaming/mongus/main/main.lua", true))()
+end)
+
+MainSection:NewButton("FE Controller Fling", "You need to buy (8-Bit Controller Backpack)", function()
+    loadstring(game:HttpGet(("https://gist.githubusercontent.com/redmoons1/c0bec422fa6f312b2e561d7ad8ce7821/raw/3b7c795e84a7e07c4136f715f290f94f2ccce460/fe controller"),true))()
+end)
+
+
+--LOCAL PLAYER
+local Player = Window:NewTab("Player")
+local PlayerSection = Player:NewSection("Player")
+
+PlayerSection:NewSlider("Walkspeed", "SPEED!!", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+PlayerSection:NewButton("Reset WS/JP", "Press only one time", function()
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+
+PlayerSection:NewButton("Free Limited", "Client Sidded!(Press V for Hide)", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/RobloxHackerProLuaStuff/avatar-editor-thing/main/headless.lua"))()
+end)
+
+PlayerSection:NewButton("FE Animation Changer", "Animation Changer (Not Mine)", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/MonkoTubeYT/animationedit/main/GUI',true))()
+end)
+
+--Other
+local Other = Window:NewTab("Other")
+local OtherSection = Other:NewSection("Other")
+
+OtherSection:NewButton("FE Chat Spoofer", "You can pretend to be the Builderman or Roblox", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/ant-7802/--/main/straightmilk.lua'))()
+end)
+
+OtherSection:NewButton("FE Chat Spammer", "Spam Spam Spam", function()
+    -- Made By Finn/Cheez/Dark!
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Frame_2 = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TextBox = Instance.new("TextBox")
+local UICorner_2 = Instance.new("UICorner")
+local TextButton = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local UICorner_4 = Instance.new("UICorner")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Frame.Position = UDim2.new(0.293939382, 0, 0.35603714, 0)
+Frame.Size = UDim2.new(0, 223, 0, 141)
+Frame.Active = true
+
+Frame_2.Parent = Frame
+Frame_2.BackgroundColor3 = Color3.fromRGB(47, 49, 59)
+Frame_2.Position = UDim2.new(0.0358744413, 0, 0.0496453904, 0)
+Frame_2.Size = UDim2.new(0, 208, 0, 126)
+
+UICorner.Parent = Frame_2
+
+TextBox.Parent = Frame_2
+TextBox.BackgroundColor3 = Color3.fromRGB(31, 31, 40)
+TextBox.Position = UDim2.new(0.0538115874, 0, 0.112630695, 0)
+TextBox.Size = UDim2.new(0, 187, 0, 47)
+TextBox.Font = Enum.Font.GothamBold
+TextBox.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
+TextBox.PlaceholderText = "Chat Goes Here!"
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(178, 178, 178)
+TextBox.TextSize = 18.000
+TextBox.TextWrapped = true
+
+UICorner_2.Parent = TextBox
+
+TextButton.Parent = Frame_2
+TextButton.BackgroundColor3 = Color3.fromRGB(31, 31, 40)
+TextButton.Position = UDim2.new(0.0538115874, 0, 0.579365075, 0)
+TextButton.Size = UDim2.new(0, 187, 0, 44)
+TextButton.Font = Enum.Font.GothamBold
+TextButton.Text = "Chat It!"
+TextButton.TextColor3 = Color3.fromRGB(189, 189, 189)
+TextButton.TextSize = 20.000
+TextButton.MouseButton1Down:Connect(function()
+	local args = {
+		[1] = (TextButton.Parent.TextBox.Text),
+		[2] = "All"
+	}
+
+	game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+end)
+
+UICorner_3.Parent = TextButton
+
+UICorner_4.Parent = Frame
+
+-- Scripts:
+
+local function XORDD_fake_script() -- Frame.Dragify 
+	local script = Instance.new('LocalScript', Frame)
+
+	local UserInputService = game:GetService("UserInputService")
+	local TweenService = game:GetService("TweenService")
+	
+	local Frame = script.Parent
+	local StartPosition = nil
+	local DragStart = nil
+	local DragSpeed = 0.25
+	local DragToggle = nil
+	
+	local function updateInput(Input)
+		local Delta = Input.Position - DragStart
+		local Position = UDim2.new(StartPosition.X.Scale, StartPosition.X.Offset + Delta.X, StartPosition.Y.Scale, StartPosition.Y.Offset + Delta.Y)
+		TweenService:Create(Frame, TweenInfo.new(DragSpeed), {Position = Position}):Play()
+	end
+	
+	Frame.InputBegan:Connect(function(Input)
+		if (Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch) then
+			DragToggle = true
+			DragStart = Input.Position
+			StartPosition = Frame.Position
+			Input.Changed:Connect(function()
+				if Input.UserInputState == Enum.UserInputState.End then
+					DragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(Input)
+		if (Input.UserInputType == Enum.UserInputType.MouseMovement or Input.UserInputType == Enum.UserInputType.Touch) then
+			if DragToggle then
+				updateInput(Input)
+			end
+		end
+	end)
+end
+coroutine.wrap(XORDD_fake_script)()
+end)
+
+OtherSection:NewButton("FE Kill", "Yes, you can kill all", function()
+    --ORPLAYZ SHOWCASED THIS SCRIPT
+--SUBSCRIBE TO ORPLAYZ ON YOUTUBE: https://www.youtube.com/channel/UC1UwUVxrjM2Sb4duUoR6zfA?sub_confirmation=1
+--JOIN THE DISCORD: https://discord.gg/ZrMZt5tbu4
+
+
+
+if game:GetService("CoreGui"):FindFirstChild("KAIOD") then
+    game:GetService("CoreGui"):FindFirstChild("KAIOD"):Destroy()
+ _G.loopkill = false
+end
+local KAIOD = Instance.new("ScreenGui")
+local Frame = Instance.new("ImageLabel")
+local UIGradient = Instance.new("UIGradient")
+local Kill = Instance.new("TextButton")
+local Target = Instance.new("TextBox")
+local Loop = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local ImageLabel = Instance.new("ImageLabel")
+local plr = game:GetService("Players").LocalPlayer
+KAIOD.Name = "KAIOD"
+KAIOD.Parent = game:GetService("CoreGui")
+Frame.Name = "Frame"
+Frame.Parent = KAIOD
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundTransparency = 1.000
+Frame.Position = UDim2.new(0.0630208328, 0, 0.196662694, 0)
+Frame.Size = UDim2.new(0, 237, 0, 352)
+Frame.Image = "rbxassetid://3570695787"
+Frame.ScaleType = Enum.ScaleType.Slice
+Frame.SliceCenter = Rect.new(100, 100, 100, 100)
+Frame.SliceScale = 0.120
+Frame.Active = true
+Frame.Draggable = true
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(0.51, Color3.fromRGB(20, 20, 20)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(25, 25, 25))}
+UIGradient.Parent = Frame
+Kill.Name = "Kill"
+Kill.Parent = Frame
+Kill.BackgroundColor3 = Color3.fromRGB(152, 0, 2)
+Kill.Position = UDim2.new(0.278481007, 0, 0.529105186, 0)
+Kill.Size = UDim2.new(0, 104, 0, 27)
+Kill.Text = "Kill"
+Kill.TextColor3 = Color3.fromRGB(161, 161, 161)
+Kill.TextScaled = true
+Kill.TextSize = 14.000
+Kill.TextWrapped = true
+Target.Name = "Target"
+Target.Parent = Frame
+Target.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+Target.Position = UDim2.new(0.0759493634, 0, 0.355113626, 0)
+Target.Size = UDim2.new(0, 200, 0, 45)
+Target.Font = Enum.Font.SourceSans
+Target.PlaceholderColor3 = Color3.fromRGB(218, 218, 218)
+Target.PlaceholderText = "Target Name|DisplayName"
+Target.Text = ""
+Target.TextColor3 = Color3.fromRGB(218, 218, 218)
+Target.TextSize = 19.000
+Loop.Name = "Loop"
+Loop.Parent = Frame
+Loop.BackgroundColor3 = Color3.fromRGB(152, 0, 2)
+Loop.Position = UDim2.new(0.278481007, 0, 0.662157595, 0)
+Loop.Size = UDim2.new(0, 104, 0, 27)
+Loop.Text = "Loop"
+Loop.TextColor3 = Color3.fromRGB(161, 161, 161)
+Loop.TextScaled = true
+Loop.TextSize = 14.000
+Loop.TextWrapped = true
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.0759493634, 0, 0.838068187, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Note: Can do random\nor single"
+TextLabel.TextColor3 = Color3.fromRGB(121, 121, 121)
+TextLabel.TextSize = 21.000
+TextLabel.TextWrapped = true
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel.TextYAlignment = Enum.TextYAlignment.Top
+ImageLabel.Parent = Frame
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 0.800
+ImageLabel.Position = UDim2.new(0.295358658, 0, 0.0454545468, 0)
+ImageLabel.Size = UDim2.new(0, 96, 0, 96)
+ImageLabel.Image = ""
+
+local Player = function(Ev)
+ if Ev == "" then
+  return nil
+ elseif Ev == "random" then
+  return game:GetService("Players"):GetPlayers()[math.random(1, #game:GetService("Players"):GetPlayers())]
+ else
+  for _, v in pairs(game:GetService("Players"):GetPlayers()) do
+   if v.Name:lower():sub(1, #Ev) == Ev:lower() or v.DisplayName:lower():sub(1, #Ev) == Ev then
+    return v
+   end
+  end
+ end
+end
+
+Target.Focused:Connect(function()
+ while Target:IsFocused() and wait() do
+  local User = Player(Target.Text)
+  if User ~= nil then
+   ImageLabel.Image = game:GetService("Players"):GetUserThumbnailAsync(User.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
+  end
+ end
+end)
+
+Target.FocusLost:Connect(function()
+ while wait() do
+  if Target:IsFocused() then break end
+  if Target.Text ~= "random" then break end
+  ImageLabel.Image = game:GetService("Players"):GetUserThumbnailAsync(Player(Target.Text).UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
+ end
+end)
+
+Kill.MouseButton1Click:Connect(function()
+ plr.Character.Humanoid:UnequipTools()
+ local Humanoid = plr.Character.Humanoid:Clone()
+ local Target = Player(Target.Text)
+ local Tool = plr.Backpack:FindFirstChildOfClass("Tool")
+
+ plr.Character.Animate.Disabled = true
+ plr.Character.Humanoid:Destroy()
+ Humanoid.Parent = plr.Character
+ Tool.Parent = plr.Character
+    game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
+ firetouchinterest(Target.Character.HumanoidRootPart, Tool.Handle, 0);
+end)
+
+Loop.MouseButton1Click:Connect(function()
+ if _G.loopkill then
+  _G.loopkill = false
+  Loop.Text = "Loop"
+ else
+  _G.loopkill = true
+  Loop.Text = "Unloop"
+  local Target = Player(Target.Text)
+  
+  repeat
+   if not game:GetService("Players"):FindFirstChild(Target.Name) then
+    _G.loopkill = false
+    game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Notification", Text = Target.Name .. " has left the game"})
+   end
+   
+   pcall(function()
+    plr.Character.Humanoid:UnequipTools()
+    local Humanoid = plr.Character.Humanoid:Clone()
+    local Tool = plr.Backpack:FindFirstChildOfClass("Tool")
+
+    plr.Character.Animate.Disabled = true
+    plr.Character.Humanoid:Destroy()
+    Humanoid.Parent = plr.Character
+    Tool.Parent = plr.Character
+    firetouchinterest(Target.Character.HumanoidRootPart, Tool.Handle, 0); wait(0.1)
+    plr.Character.Humanoid.Health = 0
+    plr.Character = nil
+   end)
+   
+   plr.CharacterAdded:Wait()
+   plr.Character:WaitForChild("Humanoid")
+  until not _G.loopkill
+ end
+end)
+print"ORPLAYZ SCRIPT LOADED"
+end)
+
+OtherSection:NewButton("FE Avatar Resizer GUI", "You can be Tall, Short or have a Big Head", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/ZWVY9r7Q"))()
+end)
+
+
+--OTHER GAME
+
+local Game = Window:NewTab("Game")
+local GameSection = Game:NewSection("Game")
+
+
+GameSection:NewButton("Prison Life", "Prison Life GUI (Not Mine)", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/LnAUPBXj",true))()
+end)
+
+GameSection:NewButton("Adopt Me", "Adopt Me Auto Farm", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+end)
+
+GameSection:NewButton("Combat Warriors", "NOVA HUB", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SussyImposterRed/Scripts/main/NOVA_HUB_SOURCE"))()
+end)
+
+GameSection:NewButton("Da Hood", "Join this groups/12271076/RAYX-Official-Community#!/about", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/SpaceYes/Lua/Main/DaHood.Lua'))()
+end)
+
+GameSection:NewButton("Hood Modded", "Oblivion HUB", function()
+    repeat task.wait() until game:IsLoaded()
+
+if game:GetService("CoreGui"):FindFirstChild("Oblivion") then
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Oblivion",
+        Text = "You only need to execute once. This will lag your game.",
+        Duration = 25,
+        Icon = 'rbxassetid://9423555621'
+    })
+    -- print('[Re Executing]')
+end 
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+  Title = "Oblivion",
+  Text = "[NOTICE] This script is for HOOD MODDED only.",
+  Duration = 5,
+  Icon = 'rbxassetid://9423555621'
+}) 
+
+--Temp fix
+if game:GetService("Workspace").Ignored:FindFirstChild('Shop') then
+    game:GetService("Workspace").Ignored:FindFirstChild('Shop').Parent = workspace
+end
+
+task.spawn(function()
+    if not game:GetService('Players').LocalPlayer:IsInGroup(15070691) then
+        setclipboard('https://www.roblox.com/groups/15070691/OblivionW#!/about')
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+              Title = "Oblivion",
+              Text = "Join the group! (Copied to Clipboard)",
+              Duration = 15,
+              Icon = 'rbxassetid://9423555621'
+         }) 
+    end
+    task.wait(3)
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+       Title = "Oblivion",
+       Text = "Toggle the UI with V",
+       Duration = 15,
+       Icon = 'rbxassetid://9423555621'
+    }) 
+end)
+
+_G.Tick = tick()
+
+if game.PlaceId == 2788229376 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptOblivion/Oblivion/main/Games/DaHood.lua"))()
+        elseif  game.PlaceId == 5602055394 or 7951883376 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptOblivion/Oblivion/main/Games/DaHoodModded.lua"))()
+        else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Oblivion",
+        Text = "Game not supported!",
+        Duration = 25,
+        Icon = 'rbxassetid://9423555621'                
+    })    
+end
+end)
+
+GameSection:NewButton("FE Sword", "FE Fling Sword You need to buy Slasher", function()
+    loadstring(game:HttpGet('https://pastebin.com/RDkG07s2'))()
+end)
