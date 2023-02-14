@@ -1116,7 +1116,7 @@ V.BackgroundTransparency = 1.000
 V.BorderSizePixel = 0
 V.Position = UDim2.new(0.172857144, 0, 0, 0)
 V.Size = UDim2.new(0, 140, 0, 40)
-V.Font = Enum.Font.GothamBold
+V.Font = Enum.Font.GothamBoldh
 V.Text = "Mirko's Glass Bridge Script V1"
 V.TextColor3 = Color3.fromRGB(255, 255, 255)
 V.TextSize = 14.000
@@ -1126,4 +1126,16 @@ GameSection:NewButton("Shortest Answer Wins", "No need to explain", function()
 end)
 GameSection:NewButton("Tommy Play", "Free Item and Emote", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe2/ToraIsMe2/main/%40tommy", true))()
+end)
+GameSection:NewButton("The Rake", "Mod Menù", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/RealZzHub/MainV2/main/Main.lua"))()
+end)
+GameSection:NewButton("Tommy Play", "Free Item and Emote", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe2/ToraIsMe2/main/%40tommy", true))()
+end)
+GameSection:NewButton("Arsenal", "Aimbot and Silent aim", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))();
+end)
+GameSection:NewButton("BedWars", "Vape V4", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/loadstring'))()
 end)
